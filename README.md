@@ -22,8 +22,8 @@ This is a modern restaurant reservation system for **Little Lemon Restaurant**, 
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
-- npm or yarn
+- Node.js
+- npm
 
 ### Installation
 
