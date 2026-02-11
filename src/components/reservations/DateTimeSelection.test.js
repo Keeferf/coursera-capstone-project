@@ -1,10 +1,8 @@
-// src/components/DateTimeSelection.test.js
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import DateTimeSelection from "./DateTimeSelection";
 
-// Mock the API
 jest.mock("../../api.js", () => ({
   fetchAPI: jest.fn(),
   submitAPI: jest.fn(),
@@ -17,7 +15,6 @@ describe("DateTimeSelection", () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    // Setup default mock return value
     fetchAPI.mockReturnValue(["17:00", "18:00", "19:00"]);
   });
 
@@ -57,7 +54,6 @@ describe("DateTimeSelection", () => {
     const dateButtons = screen.getAllByTestId("date-button");
     fireEvent.click(dateButtons[0]);
 
-    // Wait for times to appear
     await waitFor(() => {
       expect(screen.getByText("17:00")).toBeInTheDocument();
     });
@@ -72,7 +68,6 @@ describe("DateTimeSelection", () => {
     const dateButtons = screen.getAllByTestId("date-button");
     fireEvent.click(dateButtons[0]);
 
-    // Wait for times to appear
     await screen.findByText("17:00");
 
     const timeButton = screen.getByText("17:00");
@@ -87,7 +82,6 @@ describe("DateTimeSelection", () => {
     const dateButtons = screen.getAllByTestId("date-button");
     fireEvent.click(dateButtons[0]);
 
-    // Wait for times to appear
     await screen.findByText("17:00");
 
     const timeButton = screen.getByText("17:00");
@@ -117,6 +111,6 @@ describe("DateTimeSelection", () => {
     render(<DateTimeSelection onContinue={mockOnContinue} />);
 
     const dateButtons = screen.getAllByTestId("date-button");
-    expect(dateButtons).toHaveLength(7);
+    expect(dateButtons).toHaveLength(21);
   });
 });
