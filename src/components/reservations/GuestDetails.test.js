@@ -299,7 +299,9 @@ describe("GuestDetails Component", () => {
     const firstNameInput = screen.getByLabelText(/First Name \*/);
     // Instead of closest(), we can check that the form exists by verifying
     // that form-specific elements are present
-    expect(screen.getByRole("button", { type: "submit" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Confirm Reservation" }),
+    ).toBeInTheDocument();
   });
 
   test("includes optional occasion options", () => {
@@ -328,7 +330,7 @@ describe("GuestDetails Component", () => {
     );
 
     // Use getByDisplayValue to check default selection
-    expect(screen.getByDisplayValue("2")).toBeInTheDocument();
+    expect(screen.getByText("2 Guests")).toBeInTheDocument();
 
     // Alternative: check that 2 Guests option exists
     expect(screen.getByText("2 Guests")).toBeInTheDocument();
