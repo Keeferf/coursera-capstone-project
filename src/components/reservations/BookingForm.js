@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { fetchAPI } from "../../api";
-import "./DateTimeSelection.css";
+import "./BookingForm.css";
 
 const DateTimeSelection = ({ onContinue }) => {
   const [selectedDate, setSelectedDate] = useState(null);

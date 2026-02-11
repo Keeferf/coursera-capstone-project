@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import DateTimeSelection from "./DateTimeSelection";
+import BookingForm from "./BookingForm";
 
 jest.mock("../../api.js", () => ({
   fetchAPI: jest.fn(),
@@ -9,7 +9,7 @@ jest.mock("../../api.js", () => ({
 
 const { fetchAPI } = require("../../api.js");
 
-describe("DateTimeSelection", () => {
+describe("BookingForm", () => {
   const mockOnContinue = jest.fn();
 
   beforeEach(() => {
@@ -18,7 +18,7 @@ describe("DateTimeSelection", () => {
   });
 
   test("renders all headings", () => {
-    render(<DateTimeSelection onContinue={mockOnContinue} />);
+    render(<BookingForm onContinue={mockOnContinue} />);
 
     expect(screen.getByText("Select Date")).toBeInTheDocument();
     expect(screen.getByText("Select Time")).toBeInTheDocument();
@@ -26,19 +26,19 @@ describe("DateTimeSelection", () => {
   });
 
   test("continue button is disabled initially", () => {
-    render(<DateTimeSelection onContinue={mockOnContinue} />);
+    render(<BookingForm onContinue={mockOnContinue} />);
 
     expect(screen.getByText("Continue to Guest Details")).toBeDisabled();
   });
 
   test("shows date selection prompt initially", () => {
-    render(<DateTimeSelection onContinue={mockOnContinue} />);
+    render(<BookingForm onContinue={mockOnContinue} />);
 
     expect(screen.getByText("Please select a date first.")).toBeInTheDocument();
   });
 
   test("clicking date calls fetchAPI", () => {
-    render(<DateTimeSelection onContinue={mockOnContinue} />);
+    render(<BookingForm onContinue={mockOnContinue} />);
 
     const dateButtons = screen.getAllByTestId("date-button");
     fireEvent.click(dateButtons[0]);
@@ -48,7 +48,7 @@ describe("DateTimeSelection", () => {
   });
 
   test("displays available times after selecting date", async () => {
-    render(<DateTimeSelection onContinue={mockOnContinue} />);
+    render(<BookingForm onContinue={mockOnContinue} />);
 
     const dateButtons = screen.getAllByTestId("date-button");
     fireEvent.click(dateButtons[0]);
@@ -62,7 +62,7 @@ describe("DateTimeSelection", () => {
   });
 
   test("continue button enables after selecting date and time", async () => {
-    render(<DateTimeSelection onContinue={mockOnContinue} />);
+    render(<BookingForm onContinue={mockOnContinue} />);
 
     const dateButtons = screen.getAllByTestId("date-button");
     fireEvent.click(dateButtons[0]);
@@ -76,7 +76,7 @@ describe("DateTimeSelection", () => {
   });
 
   test("clicking continue calls onContinue with date and time", async () => {
-    render(<DateTimeSelection onContinue={mockOnContinue} />);
+    render(<BookingForm onContinue={mockOnContinue} />);
 
     const dateButtons = screen.getAllByTestId("date-button");
     fireEvent.click(dateButtons[0]);
@@ -96,7 +96,7 @@ describe("DateTimeSelection", () => {
   });
 
   test("displays selected date info after clicking date", async () => {
-    render(<DateTimeSelection onContinue={mockOnContinue} />);
+    render(<BookingForm onContinue={mockOnContinue} />);
 
     const dateButtons = screen.getAllByTestId("date-button");
     fireEvent.click(dateButtons[0]);
@@ -107,7 +107,7 @@ describe("DateTimeSelection", () => {
   });
 
   test("renders 7 date buttons", () => {
-    render(<DateTimeSelection onContinue={mockOnContinue} />);
+    render(<BookingForm onContinue={mockOnContinue} />);
 
     const dateButtons = screen.getAllByTestId("date-button");
     expect(dateButtons).toHaveLength(21);

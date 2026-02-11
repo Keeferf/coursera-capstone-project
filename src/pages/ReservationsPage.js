@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import HeroSection from "../components/HeroSection";
-import DateTimeSelection from "../components/reservations/DateTimeSelection";
+import BookingForm from "../components/reservations/BookingForm";
 import GuestDetails from "../components/reservations/GuestDetails";
 import Confirmation from "../components/reservations/Confirmation";
 import "./ReservationsPage.css";
@@ -34,9 +34,7 @@ const ReservationsPage = () => {
     <section className="reservations-page">
       <HeroSection title="Little Lemon" subtitle="Reserve Your Table" />
       <div className="reservations-content">
-        {step === 1 && (
-          <DateTimeSelection onContinue={handleDateTimeContinue} />
-        )}
+        {step === 1 && <BookingForm onContinue={handleDateTimeContinue} />}
         {step === 2 && (
           <GuestDetails
             dateTime={reservationData}
