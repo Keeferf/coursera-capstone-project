@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/Logo.svg";
 import "./Footer.css";
@@ -7,12 +6,9 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Logo Image */}
         <div className="footer-logo">
           <img src={Logo} alt="Little Lemon" />
         </div>
-
-        {/* Navigation Links */}
         <div className="footer-section">
           <h4>Navigation</h4>
           <ul className="footer-links">
@@ -36,8 +32,6 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-
-        {/* Contact Info */}
         <div className="footer-section">
           <h4>Contact</h4>
           <ul className="footer-links">
@@ -51,8 +45,6 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-
-        {/* Social Media */}
         <div className="footer-section">
           <h4>Social Media</h4>
           <ul className="footer-links">
@@ -86,8 +78,6 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-
-      {/* Copyright */}
       <div className="footer-bottom">
         <p>
           &copy; {new Date().getFullYear()} Little Lemon. All rights reserved.

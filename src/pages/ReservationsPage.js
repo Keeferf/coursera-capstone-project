@@ -32,15 +32,11 @@ const ReservationsPage = () => {
 
   return (
     <section className="reservations-page">
-      {/* Header Section */}
       <HeroSection title="Little Lemon" subtitle="Reserve Your Table" />
-
-      {/* Form Section */}
       <div className="reservations-content">
         {step === 1 && (
           <DateTimeSelection onContinue={handleDateTimeContinue} />
         )}
-
         {step === 2 && (
           <GuestDetails
             dateTime={reservationData}
@@ -48,7 +44,6 @@ const ReservationsPage = () => {
             onSubmit={handleGuestDetailsSubmit}
           />
         )}
-
         {step === 3 && (
           <Confirmation
             reservation={reservationData}

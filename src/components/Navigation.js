@@ -12,12 +12,10 @@ const Navigation = () => {
   return (
     <nav className="navigation">
       <div className="container nav-container">
-        {/* Logo */}
         <Link to="/" className="logo">
           <img src={logo} alt="Little Lemon" className="logo-img" />
         </Link>
-
-        {/* Mobile Menu Toggle Button (Hamburger) */}
+        {/* Custom Hamburger Menu Icon */}
         <button
           className="menu-toggle"
           onClick={toggleMenu}
@@ -27,8 +25,6 @@ const Navigation = () => {
           <span></span>
           <span></span>
         </button>
-
-        {/* Navigation Links */}
         <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
           <li>
             <Link to="/" onClick={() => setIsMenuOpen(false)}>

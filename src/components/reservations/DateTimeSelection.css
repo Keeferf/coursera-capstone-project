@@ -86,7 +86,6 @@
   margin-top: var(--spacing-sm);
 }
 
-/* Time Grid */
 .time-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

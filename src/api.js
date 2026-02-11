@@ -1,3 +1,4 @@
+/* Local API call as online version supplied wasn't working. */
 const seededRandom = function (seed) {
   var m = 2 ** 35 - 31;
   var a = 185852;

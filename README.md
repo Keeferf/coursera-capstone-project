@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a modern restaurant reservation system for **Little Lemon Restaurant**, built with React. The application allows customers to browse the restaurant, view menu highlights, and make table reservations with an intuitive multi-step booking process.
+This is a modern restaurant reservation system for **Little Lemon Restaurant**, built with React. The application allows customers to browse the restaurant, view menu highlights, and make table reservations with a multi-step booking process.
 
 ## Wireframes
 

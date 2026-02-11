@@ -1,4 +1,3 @@
-// src/components/DateTimeSelection.js
 import React, { useState, useEffect } from "react";
 import { fetchAPI } from "../../api";
 import "./DateTimeSelection.css";
@@ -100,8 +99,6 @@ const DateTimeSelection = ({ onContinue }) => {
           <p className="select-date-prompt">Please select a date first.</p>
         )}
       </div>
-
-      {/* Continue Button */}
       <button
         data-testid="continue-button"
         className="continue-button"

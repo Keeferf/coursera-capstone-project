@@ -1,5 +1,3 @@
-// src/pages/HomePage.js
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import HeroSection from "../components/HeroSection";
 import Highlights from "../components/Highlights";
@@ -17,7 +15,6 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
-      {/* Hero with description and button */}
       <HeroSection
         title="Little Lemon"
         subtitle="Chicago"
@@ -28,8 +25,6 @@ const HomePage = () => {
         imageSrc={heroImage}
         imageAlt="Little Lemon restaurant dish"
       />
-
-      {/* Constrained width sections */}
       <div className="content-wrapper">
         <Highlights />
         <Testimonials />
