@@ -29,7 +29,7 @@ This is a modern restaurant reservation system for **Little Lemon Restaurant**, 
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Keeferf/coursera-capstone-project.git
    cd coursera-capstone-project
    ```
 2. Install Dependencies:
