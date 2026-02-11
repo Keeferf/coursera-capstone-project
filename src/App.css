@@ -1,0 +1,55 @@
+:root {
+  --content-width: 66.666%;
+  --max-content-width: 1200px;
+
+  /* Primary Colors */
+  --primary-green: #495e57;
+  --primary-yellow: #f4ce14;
+
+  /* Secondary Colors */
+  --secondary-salmon: #ee9972;
+  --secondary-peach: #fbdabb;
+
+  /* Highlight Colors */
+  --highlight-light: #edefee;
+  --highlight-dark: #333333;
+
+  /* Neutral Colors */
+  --white: #ffffff;
+  --black: #000000;
+
+  /* Typography */
+  --font-display: "Markazi Text", serif;
+  --font-body: "Karla", sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Transitions */
+  --transition-base: 0.3s ease;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}

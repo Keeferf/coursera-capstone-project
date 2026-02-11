@@ -1,0 +1,15 @@
+/* Max width wrapper for content */
+.content-wrapper {
+  width: var(--content-width);
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Mobile */
+@media (max-width: 968px) {
+  .content-wrapper {
+    width: 100%;
+    padding: 0 var(--spacing-sm);
+  }
+}

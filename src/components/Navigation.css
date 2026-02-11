@@ -1,0 +1,126 @@
+.navigation {
+  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: var(--spacing-sm) 0;
+}
+
+.nav-container {
+  width: var(--content-width);
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.nav-links li a {
+  font-weight: 600;
+  color: var(--highlight-dark);
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-yellow);
+  transition: width var(--transition-base);
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a:hover {
+  color: var(--primary-green);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: var(--spacing-xs);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--primary-green);
+  border-radius: 3px;
+  transition: all var(--transition-base);
+}
+
+/* Mobile */
+@media (max-width: 968px) {
+  .nav-container {
+    width: 100%;
+    padding: 0 var(--spacing-sm);
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: calc(100vh - 70px);
+    background: var(--white);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    transition: right var(--transition-base);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-sm) 0;
+  }
+}

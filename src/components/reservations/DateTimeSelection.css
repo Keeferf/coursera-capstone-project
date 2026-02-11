@@ -1,0 +1,214 @@
+.datetime-selection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.selection-section {
+  background-color: var(--highlight-light);
+  border-radius: 16px;
+  padding: var(--spacing-lg);
+}
+
+.selection-section h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--highlight-dark);
+  margin-bottom: var(--spacing-md);
+  margin-top: 0;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.date-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xs);
+  background-color: var(--white);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  min-height: 70px;
+  min-width: 0;
+}
+
+.date-button:hover {
+  border-color: var(--primary-yellow);
+}
+
+.date-button.selected {
+  background-color: var(--primary-yellow);
+  border-color: var(--primary-yellow);
+}
+
+.date-day {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--highlight-dark);
+  line-height: 1;
+}
+
+.date-weekday {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--primary-green);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.date-month {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--primary-green);
+  text-transform: uppercase;
+}
+
+.selected-info {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--primary-green);
+  font-weight: 600;
+  padding: var(--spacing-sm);
+  background-color: var(--white);
+  border-radius: 8px;
+  margin-top: var(--spacing-sm);
+}
+
+/* Time Grid */
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+}
+
+.time-button {
+  padding: var(--spacing-sm) var(--spacing-xs);
+  background-color: var(--white);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--highlight-dark);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.time-button:hover {
+  border-color: var(--primary-yellow);
+}
+
+.time-button.selected {
+  background-color: var(--primary-yellow);
+  border-color: var(--primary-yellow);
+}
+
+.loading-text,
+.no-times,
+.select-date-prompt {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--primary-green);
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.select-date-prompt {
+  color: var(--highlight-dark);
+  font-style: italic;
+}
+
+.continue-button {
+  background-color: var(--primary-yellow);
+  color: var(--highlight-dark);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    transform var(--transition-base);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.continue-button:hover:not(:disabled) {
+  background-color: #e6c013;
+  transform: translateY(-2px);
+}
+
+.continue-button:disabled {
+  background-color: var(--secondary-peach);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Mobile */
+@media (max-width: 968px) {
+  .datetime-selection {
+    width: 100%;
+  }
+
+  .calendar-grid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+  }
+
+  .date-button {
+    min-height: 60px;
+    padding: 4px;
+  }
+
+  .date-day {
+    font-size: 1rem;
+  }
+
+  .date-weekday,
+  .date-month {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .selection-section {
+    padding: var(--spacing-md);
+  }
+
+  .calendar-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+
+  .time-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .continue-button {
+    width: 100%;
+  }
+
+  .select-date-prompt,
+  .loading-text,
+  .no-times-text {
+    padding: var(--spacing-md);
+    font-size: 0.9rem;
+  }
+}
